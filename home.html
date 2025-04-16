@@ -105,9 +105,9 @@
 </head>
 <body>
 
-  <!-- Audio Player -->
+  <!-- Autoplay audio (once) -->
   <audio autoplay>
-    <source src="https://raw.githubusercontent.com/bestinkuttu1/Stgeorgemurickasery-/main/Geevarughese-Sahada-Perunnal-Rasa-Traditional-Song-St-George.m4a" type="audio/mp4">
+    <source src="Geevarughese-Sahada-Perunnal-Rasa-Traditional-Song-St-George.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
@@ -139,7 +139,7 @@
       ഏവർക്കും നൽകുന്നു. സെന്റ് ജോർജിന്റെ ദൈവീക സാന്നിധ്യം നമ്മുടെ സമൂഹത്തെ വിശ്വാസം, ഐക്യവും സേവനവും കാണിക്കാൻ പ്രചോദിപ്പിക്കുന്നു.
     </p>
     <p>
-      നമ്മുടെ പ്രിയപ്പെട്ട പള്ളി ഡയറക്ടർ ഫാ. റെജി പാളക്കാടന്റെ നേതൃത്വത്തിൽ, പള്ളി സമൂഹ പ്രവർത്തനങ്ങളിൽ, യുവജന പ്രവർത്തനങ്ങളിൽ,
+      നമ്മുടെ പ്രിയപ്പെട്ട പള്ളി ഡയറക്ടർ ഫാ. റെജി പാളക്കാടന്റെ നേതൃത്തിൽ, പള്ളി സമൂഹ പ്രവർത്തനങ്ങളിൽ, യുവജന പ്രവർത്തനങ്ങളിൽ,
       ആത്മീയ വളർച്ചയിൽ സജീവമായിട്ടുണ്ട്. ഇവിടെ നിന്നുള്ള ഓരോ പ്രാർഥനയും, ഓരോ കൂടിക്കാഴ്ചയും, ഓരോ ആഘോഷവും ക്രിസ്തുവിന്റെ
       കുടുംബമായ ജീവിതത്തെ ആഴത്തിൽ പ്രകടിപ്പിക്കുന്നു.
     </p>
@@ -172,15 +172,13 @@
   </footer>
 
   <script>
-    // Simple slider logic
     let slides = document.querySelectorAll('.slide');
     let index = 0;
-
     setInterval(() => {
       slides[index].classList.remove('active');
       index = (index + 1) % slides.length;
       slides[index].classList.add('active');
-    }, 3000); // change every 3 seconds
+    }, 3000);
   </script>
 
 </body>
