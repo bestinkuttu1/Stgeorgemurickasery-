@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - St. George Church Murickassery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: #003366;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      text-align: center;
+      width: 100%;
+    }
+
+    nav a {
+      margin: 0 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      left: 20px;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      background: #003366;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 999;
+    }
+
+    .dropdown a {
+      display: block;
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+    }
+
+    .dropdown a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .contact-info div {
+      width: 100%;
+      padding: 15px;
+      background: #003366;
+      color: white;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .contact-info div i {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #f9f9f9;
+    }
+
+    .contact-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 15px;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: #004d99;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="prayer-time.html">Prayer Time</a>
+    </nav>
+  </header>
+
+  <!-- 3-dot Dropdown Menu -->
+  <div class="dropdown" id="menu">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="prayer-time.html">Prayer Time</a>
+  </div>
+
+  <!-- Contact Page -->
+  <div class="container">
+    
+    <!-- Contact Info Section -->
+    <div class="contact-info">
+      <div>
+        <i class="fas fa-phone-alt"></i>
+        <h3>Phone</h3>
+        <p>+91 82810 75781</p>
+      </div>
+      <div>
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>bestinmathew0@gmail.com</p>
+      </div>
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Address</h3>
+        <p>St. George Church, Murickassery, Kerala, 685604</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" action="mailto:bestinmathew0@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="tel" name="phone" placeholder="Your Phone" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Created by Bestin Mathew © 2025</p>
+    <p>Church Name: St. George Church, Murickassery</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      if (!event.target.closest('.menu-icon')) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
