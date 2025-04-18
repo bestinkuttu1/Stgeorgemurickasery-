@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prayer Time - St. George Church Murickassery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 20px;
+      background: #003366;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    nav a {
+      margin: 0 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      left: 20px;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      background: #003366;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 999;
+    }
+
+    .dropdown a {
+      display: block;
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+    }
+
+    .dropdown a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 24px;
+      color: #003366;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .prayer-box {
+      background-color: #4d94ff; /* Set the background color to blue */
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .prayer-box h3 {
+      color: white; /* Text color inside the box */
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .prayer-box ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .prayer-box ul li {
+      padding: 8px 0;
+      font-size: 18px;
+      color: white; /* Text color for the list items */
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 3-dot Dropdown Menu -->
+  <div class="dropdown" id="menu">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Prayer Time Container -->
+  <div class="container">
+    <div class="section-title">ഞായറാഴ്‌ച പ്രാർത്ഥനാ സമയം</div>
+    <div class="prayer-box">
+      <h3></h3> <!-- Removed "പ്രഭാത പ്രാർത്ഥന" here -->
+      <ul>
+        <li>7:30 AM - പ്രഭാത പ്രാർത്ഥന</li>
+        <li>8:30 AM - വിശുദ്ധ കുർബ്ബാന</li>
+      </ul>
+    </div>
+
+    <div class="section-title">വിശേഷ ദിനം പ്രാർത്ഥനാ സമയം</div>
+    <div class="prayer-box">
+      <h3></h3> <!-- Removed "പ്രഭാത പ്രാർത്ഥന" here -->
+      <ul>
+        <li>6:45 AM - പ്രഭാത പ്രാർത്ഥന</li>
+        <li>7:15 AM - വിശുദ്ധ കുർബ്ബാന</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Created by Bestin Mathew © 2025</p>
+    <p>Church Name: സെന്റ് ജോർജ് യാക്കോബായ സുറിയാനി പള്ളി, മുരിക്കാശ്ശേരി</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      if (!event.target.closest('.menu-icon')) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
