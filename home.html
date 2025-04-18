@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ml">
+<!DOCTYPE html><html lang="ml">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,163 +6,148 @@
   <style>
     * {
       box-sizing: border-box;
-    }
+    }body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  scroll-behavior: smooth;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      color: #333;
-      scroll-behavior: smooth;
-    }
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  background: #003366;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 20px;
-      background: #003366;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-    nav a {
-      margin: 0 20px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .menu-icon {
-      font-size: 24px;
-      cursor: pointer;
-      position: absolute;
-      left: 20px;
-    }
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}
 
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 60px;
-      left: 10px;
-      background: #003366;
-      padding: 10px;
-      border-radius: 5px;
-      z-index: 999;
-    }
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background: #003366;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 999;
+}
 
-    .dropdown a {
-      display: block;
-      color: white;
-      padding: 8px 12px;
-      text-decoration: none;
-    }
+.dropdown a {
+  display: block;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+}
 
-    .dropdown a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
+.dropdown a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
-    .slider {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-    }
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
 
-    .slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 
-    .slide.active {
-      opacity: 1;
-    }
+.slide.active {
+  opacity: 1;
+}
 
-    .curved-title {
-      text-align: center;
-      font-size: 28px;
-      color: #003366;
-      margin-top: 20px;
-      font-weight: bold;
-    }
+.curved-title {
+  text-align: center;
+  font-size: 28px;
+  color: #003366;
+  margin-top: 20px;
+  font-weight: bold;
+}
 
-    .priest {
-      text-align: center;
-      margin: 20px 0;
-    }
+.priest {
+  text-align: center;
+  margin: 20px 0;
+}
 
-    .priest img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid #003366;
-    }
+.priest img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #003366;
+}
 
-    .description {
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-      text-align: justify;
-      padding: 0 10px;
-    }
+.description {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: justify;
+  padding: 0 10px;
+}
 
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
   </style>
 </head>
-<body>
-
-  <!-- Audio -->
-  <audio id="church-audio" autoplay>
+<body>  <!-- Audio -->  <audio autoplay>
     <source src="Geevarughese-Sahada-Perunnal-Rasa-Traditional-Song-St-George.mp3" type="audio/mp3">
     Your browser does not support the audio element.
-  </audio>
-
-  <!-- Header -->
-  <header>
+  </audio>  <!-- Header -->  <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <nav>
       <a href="gallery.html">Gallery</a>
       <a href="prayer-time.html">Prayer Time</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
-
-  <!-- 3-dot Dropdown Menu -->
-  <div class="dropdown" id="menu">
+  </header>  <!-- 3-dot Dropdown Menu -->  <div class="dropdown" id="menu">
     <a href="gallery.html">Gallery</a>
     <a href="prayer-time.html">Prayer Time</a>
     <a href="contact.html">Contact</a>
-  </div>
-
-  <!-- Image Slider -->
-  <div class="slider">
+  </div>  <!-- Image Slider -->  <div class="slider">
     <img src="https://i.postimg.cc/qvjJB2tx/101-1024.jpg" class="slide active" alt="Church 1" />
     <img src="https://i.postimg.cc/x8nj8zM0/IMG-20230201-191626-294.jpg" class="slide" alt="Church 2" />
-  </div>
-
-  <!-- Title and Priest -->
-  <h1 class="curved-title">St George Church, Murickassery</h1>
-
-  <div class="priest">
+  </div>  <!-- Title and Priest -->  <h1 class="curved-title">St George Church, Murickassery</h1>  <div class="priest">
     <img src="https://i.postimg.cc/CxY5xFcS/581-FB2-A1-6070-4-D6-F-ABEC-D958581-F6381.jpg" alt="Priest" />
     <p style="font-weight: bold; margin-top: 10px; font-size: 18px;">Fr. Regi Palakkadan, Vicar</p>
-  </div>
-
-  <!-- Church Description -->
-  <div class="description">
+  </div>  <!-- Church Description -->  <div class="description">
     <p>
       ഇടുക്കി ജില്ലയിലെ പ്രകൃതിസൗന്ദര്യത്തോടെ സമൃദ്ധമായ മലനിരകളിൽ നിലകൊള്ളുന്ന <strong>സെന്റ് ജോർജ് യാക്കോബായ സുറിയാനി പള്ളി, മുരിക്കാശ്ശേരി</strong>, വിശ്വാസത്തിന്റെയും ഐക്യത്തിന്റെയും ഒരടയാളമായി ഇന്നും തഴച്ചുനിൽക്കുന്നു.
     </p>
@@ -179,14 +163,10 @@
     <p>
       ഇന്ന് <strong>സെന്റ് ജോർജ് യാക്കോബായ സുറിയാനി പള്ളി, മുരിക്കാശ്ശേരി</strong>, അതിന്റെ പിതാക്കന്മാരുടെ വിശ്വാസവും സമർപ്പണവും മുൻതൂക്കം വെച്ചുകൊണ്ട്, പുതിയ തലമുറകളെ ആത്മീയതയിലേക്കും സേവനത്തിലേക്കും നയിക്കുന്ന ഒരു ദിവ്യപ്രകാശമായി നിലകൊള്ളുന്നു.
     </p>
-  </div>
-
-  <footer>
+  </div>  <footer>
     <p>Created by Bestin Mathew © 2025</p>
     <p>Church Name: സെന്റ് ജോർജ് യാക്കോബായ സുറിയാനി പള്ളി, മുരിക്കാശ്ശേരി</p>
-  </footer>
-
-  <script>
+  </footer>  <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
@@ -213,13 +193,5 @@
     }
 
     setInterval(showSlide, 3000);
-
-    // Check if the audio should play based on the stored state
-    if (!sessionStorage.getItem('audioPlayed')) {
-      document.getElementById('church-audio').play();
-      sessionStorage.setItem('audioPlayed', 'true');
-    }
-  </script>
-
-</body>
+  </script></body>
 </html>
