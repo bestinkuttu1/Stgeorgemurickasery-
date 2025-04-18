@@ -126,7 +126,7 @@
 <body>
 
   <!-- Audio -->
-  <audio autoplay>
+  <audio id="church-audio" autoplay>
     <source src="Geevarughese-Sahada-Perunnal-Rasa-Traditional-Song-St-George.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
@@ -213,6 +213,12 @@
     }
 
     setInterval(showSlide, 3000);
+
+    // Check if the audio should play based on the stored state
+    if (!sessionStorage.getItem('audioPlayed')) {
+      document.getElementById('church-audio').play();
+      sessionStorage.setItem('audioPlayed', 'true');
+    }
   </script>
 
 </body>
