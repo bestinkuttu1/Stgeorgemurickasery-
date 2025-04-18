@@ -18,9 +18,11 @@
     }
 
     header {
-      text-align: center;
-      padding: 20px;
-      background: #7f0000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 20px;
+      background: #003366;
       color: white;
       position: sticky;
       top: 0;
@@ -28,10 +30,39 @@
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 20px;
       color: white;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      left: 20px;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      background: #003366;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 999;
+    }
+
+    .dropdown a {
+      display: block;
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+    }
+
+    .dropdown a:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .slider {
@@ -57,7 +88,7 @@
     .curved-title {
       text-align: center;
       font-size: 28px;
-      color: red;
+      color: #003366;
       margin-top: 20px;
       font-weight: bold;
     }
@@ -71,7 +102,7 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 4px solid #7f0000;
+      border: 4px solid #003366;
     }
 
     .description {
@@ -82,19 +113,8 @@
       padding: 0 10px;
     }
 
-    section {
-      padding: 40px 10px;
-      background: white;
-      margin-top: 20px;
-    }
-
-    section h2, section h3 {
-      text-align: center;
-      color: #7f0000;
-    }
-
     footer {
-      background-color: #7f0000;
+      background-color: #003366;
       color: white;
       text-align: center;
       padding: 20px;
@@ -105,26 +125,36 @@
 </head>
 <body>
 
-  <!-- Autoplay audio (once) -->
+  <!-- Audio -->
   <audio autoplay>
     <source src="Geevarughese-Sahada-Perunnal-Rasa-Traditional-Song-St-George.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
+  <!-- Header -->
   <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#prayer-time">Prayer Time</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="prayer-time.html">Prayer Time</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
+  <!-- 3-dot Dropdown Menu -->
+  <div class="dropdown" id="menu">
+    <a href="gallery.html">Gallery</a>
+    <a href="prayer-time.html">Prayer Time</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
   <!-- Image Slider -->
-  <div class="slider" id="home">
+  <div class="slider">
     <img src="https://i.postimg.cc/qvjJB2tx/101-1024.jpg" class="slide active" alt="Church 1" />
     <img src="https://i.postimg.cc/x8nj8zM0/IMG-20230201-191626-294.jpg" class="slide" alt="Church 2" />
   </div>
 
+  <!-- Title and Priest -->
   <h1 class="curved-title">St George Church, Murickassery</h1>
 
   <div class="priest">
@@ -132,53 +162,57 @@
     <p style="font-weight: bold; margin-top: 10px; font-size: 18px;">Fr. Regi Palakkadan, Vicar</p>
   </div>
 
+  <!-- Church Description -->
   <div class="description">
     <p>
-      സെന്റ് ജോർജ് ചർച്ച് മുറിക്കാസേരി ഒരു ആരാധനാലയത്തിനപ്പുറം, ആയിരങ്ങളായ വിശ്വാസികളുടെയും ഹൃദയങ്ങൾക്കും ആത്മീയവാസസ്ഥലമാണ്.
-      ഇടുക്കി ജില്ലയുടെ സമാധാനപരമായ ഉയരങ്ങളിൽ സ്ഥിതിചെയ്യുന്ന ഈ പള്ളി, വഹിക്കുന്ന അനുഗ്രഹങ്ങളും സാന്ത്വനങ്ങളും മാർഗ്ഗദർശനവും
-      ഏവർക്കും നൽകുന്നു. സെന്റ് ജോർജിന്റെ ദൈവീക സാന്നിധ്യം നമ്മുടെ സമൂഹത്തെ വിശ്വാസം, ഐക്യവും സേവനവും കാണിക്കാൻ പ്രചോദിപ്പിക്കുന്നു.
+      ഇടുക്കി ജില്ലയിലെ പ്രകൃതിസൗന്ദര്യത്തോടെ സമൃദ്ധമായ മലനിരകളിൽ നിലകൊള്ളുന്ന <strong>സെന്റ് ജോർജ് യാക്കോബായ സുറിയാനി പള്ളി, മുരിക്കാശ്ശേരി</strong>, വിശ്വാസത്തിന്റെയും ഐക്യത്തിന്റെയും ഒരടയാളമായി ഇന്നും തഴച്ചുനിൽക്കുന്നു.
     </p>
     <p>
-      നമ്മുടെ പ്രിയപ്പെട്ട പള്ളി ഡയറക്ടർ ഫാ. റെജി പാളക്കാടന്റെ നേതൃത്തിൽ, പള്ളി സമൂഹ പ്രവർത്തനങ്ങളിൽ, യുവജന പ്രവർത്തനങ്ങളിൽ,
-      ആത്മീയ വളർച്ചയിൽ സജീവമായിട്ടുണ്ട്. ഇവിടെ നിന്നുള്ള ഓരോ പ്രാർഥനയും, ഓരോ കൂടിക്കാഴ്ചയും, ഓരോ ആഘോഷവും ക്രിസ്തുവിന്റെ
-      കുടുംബമായ ജീവിതത്തെ ആഴത്തിൽ പ്രകടിപ്പിക്കുന്നു.
+      20-ആം നൂറ്റാണ്ടിന്റെ മധ്യത്തിൽ പിതൃഭൂമികൾ വിട്ട് കേരളത്തിന്റെ കുന്നിൻപ്രദേശങ്ങളിലേക്ക് കുടിയേറിയ കർഷകരുടെ ആത്മാർത്ഥമായ പരിശ്രമം കൊണ്ടാണ് ഈ പള്ളി രൂപംകൊണ്ടത്.
+    </p>
+    <p>
+      ജീവിതം എളുപ്പമല്ലായിരുന്നെങ്കിലും, പ്രാർത്ഥനയ്ക്കും ആരാധനയ്ക്കും ഒരിടം നിർമിക്കണമെന്ന ആഗ്രഹം മുന്നിൽവെച്ച്, ഒരുമയും വിശ്വാസവും കൂടെപിടിച്ച് അവർ ഈ പള്ളി നിർമ്മിച്ചു.
+    </p>
+    <p>
+      പള്ളിയുടെ പാറ്റ്രൺ സെന്റ് ജോർജിന്റെ തിരുനാൾ, വലിയ ആഘോഷത്തോടെ ആചരിക്കുന്നു.
+    </p>
+    <p>
+      ഇന്ന് <strong>സെന്റ് ജോർജ് യാക്കോബായ സുറിയാനി പള്ളി, മുരിക്കാശ്ശേരി</strong>, അതിന്റെ പിതാക്കന്മാരുടെ വിശ്വാസവും സമർപ്പണവും മുൻതൂക്കം വെച്ചുകൊണ്ട്, പുതിയ തലമുറകളെ ആത്മീയതയിലേക്കും സേവനത്തിലേക്കും നയിക്കുന്ന ഒരു ദിവ്യപ്രകാശമായി നിലകൊള്ളുന്നു.
     </p>
   </div>
 
-  <section id="gallery">
-    <h2>പള്ളി ഭക്ത സംഘംകള്‍</h2>
-
-    <h3>യൗവന സംഘടന (യുവജന സംഘം)</h3>
-    <p class="description">
-      സെന്റ് ജോർജ് യുവജന സംഘം parish ന്റെ യുവാക്കൾക്കുള്ള ആത്മീയവും സാമൂഹികവുമായ വളർച്ചയ്ക്കായുള്ള ഒരു സജീവ കൂട്ടായ്മയാണ്.
-      ആരാധന, സമൂഹ സേവനം, സാംസ്കാരിക പരിപാടികൾ എന്നിവയുടെ മുഖേന യുവാക്കളുടെ കഴിവുകൾ വളർത്തുകയും സഭായുഗമാക്കുകയും ചെയ്യുന്നു.
-    </p>
-
-    <h3>സൺഡേ സ്കൂൾ</h3>
-    <p class="description">
-      സൺഡേ സ്കൂൾ കുട്ടികൾക്കുള്ള ബൈബിള്‍ പഠനവും ക്രിസ്തീയ മൂല്യങ്ങൾ വളർത്തുന്നതിനുള്ള പ്രധാന സംരംഭമാണ്. അധ്യാപകരുടെ നേതൃത്വത്തിൽ
-      ഓരോ ഞായറാഴ്ചയും ക്ലാസ്സുകൾ നടത്തപ്പെടുന്നു. കുട്ടികൾ ആത്മീയമായി വളരുന്നതിനും സഭയിൽ പങ്കാളികളാകുന്നതിനും ഇത് സഹായിക്കുന്നു.
-    </p>
-
-    <h3>മാർത്ത മറിയം വനിതാ സമാജം</h3>
-    <p class="description">
-      വനിതകളുടെ ആത്മീയ ഉന്നമനത്തിനായി പ്രവർത്തിക്കുന്ന ഒരു സംഘടനയാണ് മാർത്ത മറിയം വനിതാ സമാജം. പ്രാർത്ഥന, ബൈബിള്‍ പഠനം,
-      സേവന പ്രവർത്തനങ്ങൾ എന്നിവയിലൂടെ കുടുംബവും സമൂഹവും ശക്തിപ്പെടുത്തുന്നതിൽ ഈ സംഘം പ്രധാന പങ്ക് വഹിക്കുന്നു.
-    </p>
-  </section>
-
   <footer>
-    <p>Message created by Bestin Vembinchirayil © 2025</p>
+    <p>Created by Bestin Mathew © 2025</p>
+    <p>Church Name: സെന്റ് ജോർജ് യാക്കോബായ സുറിയാനി പള്ളി, മുരിക്കാശ്ശേരി</p>
   </footer>
 
   <script>
-    let slides = document.querySelectorAll('.slide');
-    let index = 0;
-    setInterval(() => {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-    }, 3000);
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      if (!event.target.closest('.menu-icon')) {
+        menu.style.display = 'none';
+      }
+    });
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide() {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentSlide) {
+          slide.classList.add('active');
+        }
+      });
+      currentSlide = (currentSlide + 1) % slides.length;
+    }
+
+    setInterval(showSlide, 3000);
   </script>
 
 </body>
